@@ -127,4 +127,63 @@ binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 0110
 ~~~
   
   
+# 4) Filter vs Every vs hardcode 
+
+https://www.freecodecamp.org/challenges/everything-be-true
+
+~~~
+
+function truthCheck(collection, pre) {
+
+ var l= collection.filter(o => o[pre]);
+ console.log(l);
+  if(l.length===collection.length)
+  return true;
+  else return false;}
+truthCheck([{"name": "Pete", "onBoat": true},
+{"name": "Repeat", "onBoat": true, "alias": "Repete"}, 
+{"name": "FastFoward", "onBoat": NaN}], "onBoat")
+~~~
+
+OutPut:
+
+~~~
+
+[ { name: 'Pete', onBoat: true },
+  { name: 'Repeat', onBoat: true, alias: 'Repete' } ]
+=> false
+~~~
+
+Every
+
+~~~
+function truthCheck(collection, pre) {
+ return collection.every(o => o[pre]);
+}
+truthCheck([{"name": "Pete", "onBoat": true},
+{"name": "Repeat", "onBoat": true, "alias": "Repete"}, 
+{"name": "FastFoward", "onBoat": NaN}], "onBoat")
+~~~
+
+Hard code (except NAN which is not matched when compared)
+
+~~~ 
+function truthCheck(collection, pre) {
+  // Is everyone being true?
+ var l= collection.filter(o => o[pre]===false || o[pre]=== 0 ||o[pre]=== NaN || o[pre] === undefined || o[pre]=== null ||o[pre]=== ""  );
+ console.log(l);
+  if(l.length>0)
+  return false;
+  else return true;}
+
+truthCheck([{"name": "Pete", "onBoat": true},
+{"name": "Repeat", "onBoat": true, "alias": "Repete"}, 
+{"name": "FastFoward", "onBoat": NaN}], "onBoat")
+~~~
+
+output 
+
+# is true ,should be false because of NAN
+
+
 
