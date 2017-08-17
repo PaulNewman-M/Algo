@@ -183,7 +183,7 @@ truthCheck([{"name": "Pete", "onBoat": true},
 
 output 
 
-# is true ,should be false because of NAN
+# is true??? should be false because of NAN
 
 
 
