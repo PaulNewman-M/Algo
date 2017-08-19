@@ -186,4 +186,15 @@ output
 # is true??? should be false because of NAN
 
 
+5) Codewars Questions: CamelCase function
+
+~~~
+
+function camelCase(string){
+  return string.replace( /^\w|(\s\w)/g, a=>a.toUpperCase()).replace(/\s/g,'');  // replace(/\s/g,'') removes spaces
+}
+camelCase("123 hello how are you ");
+
+~~~
+
 
