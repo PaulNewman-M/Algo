@@ -197,4 +197,26 @@ camelCase("123 hello how are you ");
 
 ~~~
 
+6) concat two arrays and remove duplicates
+
+```
+function sym() {
+console.log(arguments[1]);
+
+
+//concat two arrays
+var arr = arguments[0].reduce(function(a, b) {
+  return a.concat(b);
+}, arguments[1]);
+console.log(arr);
+
+//remove duplicates in concated array 
+ arr = arr.filter( function( item, index, inputArray ) {
+           return inputArray.indexOf(item) == index?console.log("y",inputArray.indexOf(item),index): console.log("n",inputArray.indexOf(item),index);
+    });
+return arr;
+}
+sym([5, 2, 1, 4],[1,2, 3]);
+
+```
 
