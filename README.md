@@ -1,9 +1,10 @@
 # Algo
 Aggressive Algorithm Practice 
 
-#  1) Best Usage of filter() in JS:
+
 
 ```javascript
+1) Best Usage of filter() in JS:
 
 function findElement(arr, func) {
   var longWords = arr.filter(func);
