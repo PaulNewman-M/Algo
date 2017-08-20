@@ -200,7 +200,7 @@ camelCase("123 hello how are you ");
 
 6) concat two arrays and remove duplicates
 
-```javascript
+
 function sym() {
 console.log(arguments[1]);
 
@@ -219,5 +219,4 @@ return arr;
 }
 sym([5, 2, 1, 4],[1,2, 3]);
 
-```
 
