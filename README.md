@@ -286,3 +286,5 @@ if  :acc [] item [ 4 ] concat 6
 
 else :acc [] item 4 concat 7
 => [ 1, 2, 3, 4 ]
+
+https://forum.freecodecamp.org/t/using-array-prototype-reduce-to-reduce-conceptual-boilerplate-for-problems-on-arrays/14687
