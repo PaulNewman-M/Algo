@@ -253,4 +253,36 @@ item.filter(val => !acc.includes(val))
 => [ 3, 4, 5 ]
    
  
+8)
+ var count=0;
+function steamrollArray(arr) {
+  // I'm a steamroller, baby
+ 
+  return arr.reduce(function(acc,item){
+    if(Array.isArray(item)){
+  console.log("if  :acc",acc,"item",item,"concat",count++)
+    return acc.concat(steamrollArray(item));}
+    console.log("\nelse :acc",acc,"item",item,"concat",count++)
+    return acc.concat(item);
+  }, [])
+  
+  return arr;
+}
 
+steamrollArray([1, [2], [3, [[4]]]]);
+
+Output:
+
+
+else :acc [] item 1 concat 0
+if  :acc [ 1 ] item [ 2 ] concat 1
+
+else :acc [] item 2 concat 2
+if  :acc [ 1, 2 ] item [ 3, [ [ 4 ] ] ] concat 3
+
+else :acc [] item 3 concat 4
+if  :acc [ 3 ] item [ [ 4 ] ] concat 5
+if  :acc [] item [ 4 ] concat 6
+
+else :acc [] item 4 concat 7
+=> [ 1, 2, 3, 4 ]
