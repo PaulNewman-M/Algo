@@ -219,6 +219,18 @@ return arr;
 }
 sym([5, 2, 1, 4],[1,2, 3]);
 
+
+~~~
+array1 = array1.filter(function(val) {
+  return array2.indexOf(val) == -1;
+});
+Or, with the availability of ES6:
+
+array1 = array1.filter(val => !array2.includes(val));
+
+
+~~~
+
 7) Symmetric difference
 
 function sym(args) {
