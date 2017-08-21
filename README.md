@@ -218,5 +218,39 @@ console.log(arr);
 return arr;
 }
 sym([5, 2, 1, 4],[1,2, 3]);
+
+7) Symmetric difference
+
+function sym(args) {
+var arr = Array.prototype.slice.call(arguments);
+  return arr.reduce(function(acc, item){
+       console.log( "\n acc.filter(val => !item.includes(val))\n", acc.filter(val => !item.includes(val)),"\nitem.filter(val => !acc.includes(val))\n",item.filter(val => !acc.includes(val)),"\n");
+   
+    acc  = acc.filter(val => !item.includes(val)).concat(item.filter(val =>    !acc.includes(val))).sort(); // removes similar elements ;
+    
+        return acc.filter( function( item, index, inputArray ) {
+           return inputArray.indexOf(item) == index;   //removes duplicate values;
+    });
+    
+  }, []);
+
+}
+sym([1, 2, 3], [5, 2, 1, 4]);
+
+
+output: 
+ acc.filter(val => !item.includes(val))
+ [] 
+item.filter(val => !acc.includes(val))
+ [ 1, 2, 3 ] 
+
+
+ acc.filter(val => !item.includes(val))
+ [ 3 ] 
+item.filter(val => !acc.includes(val))
+ [ 5, 4 ] 
+
+=> [ 3, 4, 5 ]
+   
  
 
